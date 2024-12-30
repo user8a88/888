@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streaming Site</title>
+    <title>Simple Streaming Site</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,6 +32,11 @@
             width: 200px;
             overflow: hidden;
             text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .movie:hover {
+            transform: scale(1.05);
         }
         .movie img {
             width: 100%;
@@ -42,57 +47,25 @@
             margin: 0.5rem 0;
             padding: 0 0.5rem;
         }
-        .movie p {
-            font-size: 0.9rem;
-            padding: 0 0.5rem 1rem;
-            color: #666;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Streaming Site</h1>
+        <h1>Simple Streaming Site</h1>
     </header>
-    <div class="container" id="movies-container">
-        <!-- Movie cards will be dynamically inserted here -->
+    <div class="container">
+        <div class="movie" onclick="window.location.href='movie1.html'">
+            <img src="https://via.placeholder.com/200x300" alt="Movie 1 Poster">
+            <h3>Movie 1</h3>
+        </div>
+        <div class="movie" onclick="window.location.href='movie2.html'">
+            <img src="https://via.placeholder.com/200x300" alt="Movie 2 Poster">
+            <h3>Movie 2</h3>
+        </div>
+        <div class="movie" onclick="window.location.href='movie3.html'">
+            <img src="https://via.placeholder.com/200x300" alt="Movie 3 Poster">
+            <h3>Movie 3</h3>
+        </div>
     </div>
-
-    <script>
-        // Fetch movie data from an API
-        async function fetchMovies() {
-            const apiKey = "880bc28728bad4d28847d82c918ea026";
-            const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
-
-            try {
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-                displayMovies(data.results);
-            } catch (error) {
-                console.error("Error fetching movie data:", error);
-            }
-        }
-
-        // Display movies in the container
-        function displayMovies(movies) {
-            const container = document.getElementById("movies-container");
-            container.innerHTML = ""; // Clear existing content
-
-            movies.forEach(movie => {
-                const movieElement = document.createElement("div");
-                movieElement.classList.add("movie");
-
-                movieElement.innerHTML = `
-                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} Poster">
-                    <h3>${movie.title}</h3>
-                    <p>${movie.release_date}</p>
-                `;
-
-                container.appendChild(movieElement);
-            });
-        }
-
-        // Initialize the page
-        fetchMovies();
-    </script>
 </body>
 </html>
