@@ -1,0 +1,93 @@
+/* Reset et styles de base */
+/* ... (garder les styles précédents jusqu'aux cartes) ... */
+
+/* Cartes de films et séries */
+.movie-card,
+.series-card {
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card:hover,
+.series-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img,
+.series-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover img,
+.series-card:hover img {
+    transform: scale(1.05);
+}
+
+.movie-card h3,
+.series-card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+}
+
+.movie-card .btn,
+.series-card .btn {
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #e50914;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.movie-card .btn:hover,
+.series-card .btn:hover {
+    background-color: #e50914;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Grille et Carousel */
+.carousel-container,
+.grid-container {
+    margin: 2rem auto;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2.5rem;
+    padding: 0 2rem;
+}
+
+/* ... (garder les styles suivants inchangés) ... */
+
+@media (max-width: 768px) {
+    .carousel-container,
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .movie-card img,
+    .series-card img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card img,
+    .series-card img {
+        height: 240px;
+    }
+}

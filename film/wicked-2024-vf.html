@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Film - CinéStream</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/cards.css">
+
+    <style type="text/css">
+        /* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Placeholder pour une image de fond */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e50914; /* Rouge Netflix */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* Movie Detail Section */
+.movie-detail {
+    /* padding: 40px 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.video-container {
+    position: relative; /* Nécessaire pour positionner le message au-dessus */
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden; /* Empêche le contenu de déborder */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.movie-info {
+    flex: 1;
+    max-width: 600px;
+}
+
+.movie-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #e50914;
+}
+
+.movie-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.video-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    width: 80%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.close-warning {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1268px) {
+    .movie-detail {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .video-warning {
+        font-size: .7rem;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: #e50914;">GStream</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../films.html">Films</a></li>
+                <li><a href="../series.html">Séries</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Wicked 2024 VF</h1>
+            <p>Films en streaming !</p>
+        </section>
+
+        <section class="movie-detail">
+            <div class="video-container">
+                <iframe src="https://glink1.rf.gd/oBCnV3" style="max-width: 720px; width: 100%; height: 450px; border-radius: 20px;" title="" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" scrolling="no"></iframe>
+                <div class="video-warning" id="videoWarning">
+                    <p>
+                        Cette vidéo contient une publicité pour adulte.
+                        <br><br>
+                        La vidéo sera dispo après la pub de 5s.
+                    </p>
+                    <button class="close-warning" onclick="closeWarning()">×</button>
+                </div>
+            </div>
+            
+            <div class="movie-info">
+                <h2>Description</h2>
+                <p>Elphaba, une jeune femme incomprise à cause de sa peau verte inhabituelle, doit encore découvrir son véritable pouvoir. Glinda, une jeune femme populaire, dorée par le privilège et l'ambition, doit encore découvrir son véritable coeur. Les deux se rencontrent en tant qu'étudiantes à l'Université de Shiz dans le fantastique Pays d'Oz et forgent une amitié improbable, mais profonde.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 GStream. Tous droits réservés.</p>
+    </footer>
+    <script type="text/javascript">
+        // Ferme le message immédiatement lorsqu'on clique sur la croix
+        function closeWarning() {
+            const warning = document.getElementById('videoWarning');
+            warning.style.display = 'none';
+        }
+
+        // Cache automatiquement le message après 5 secondes
+        setTimeout(() => {
+            const warning = document.getElementById('videoWarning');
+            warning.style.display = 'none';
+        }, 30000);
+    </script>
+</body>
+</html>

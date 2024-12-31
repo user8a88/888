@@ -1,71 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Streaming Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f4f6;
-            color: #333;
-        }
-        header {
-            background-color: #1a202c;
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 1rem;
-        }
-        .movie {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 1rem;
-            width: 200px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        .movie:hover {
-            transform: scale(1.05);
-        }
-        .movie img {
-            width: 100%;
-            height: auto;
-        }
-        .movie h3 {
-            font-size: 1rem;
-            margin: 0.5rem 0;
-            padding: 0 0.5rem;
-        }
-    </style>
+    <title>CinéStream - Streaming</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cards.css">
 </head>
 <body>
     <header>
-        <h1>Simple Streaming Site</h1>
+        <nav class="main-nav">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: #e50914;">GStream</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <div class="movie" onclick="window.location.href='movie1.html'">
-            <img src="https://via.placeholder.com/200x300" alt="Movie 1 Poster">
-            <h3>Movie 1</h3>
-        </div>
-        <div class="movie" onclick="window.location.href='movie2.html'">
-            <img src="https://via.placeholder.com/200x300" alt="Movie 2 Poster">
-            <h3>Movie 2</h3>
-        </div>
-        <div class="movie" onclick="window.location.href='movie3.html'">
-            <img src="https://via.placeholder.com/200x300" alt="Movie 3 Poster">
-            <h3>Movie 3</h3>
-        </div>
-    </div>
+
+    <main>
+        <section class="hero">
+            <h1>Découvrez le meilleure Streaming</h1>
+            <p>Films et séries en un seul endroit</p>
+        </section>
+
+        <section class="carousel">
+            <h2>Films Populaires</h2>
+            <div class="carousel-container">
+                <div class="movie-card">
+                    <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kQkgPhj6sCuoMWzPKWQVOWUXzib.jpg" alt="Wicked 2024">
+                    <div class="card-content">
+                        <h3>Wicked 2024 VF</h3>
+                        <a href="film/wicked-2024-vf.html" class="btn">Voir en Streaming</a>
+                    </div>
+                </div>
+                <!--<div class="movie-card">
+                    <img src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" alt="Inception">
+                    <div class="card-content">
+                        <h3>Inception</h3>
+                        <a href="film-detail.html" class="btn">Voir en Streaming</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Interstellar">
+                    <div class="card-content">
+                        <h3>Interstellar</h3>
+                        <a href="film-detail.html" class="btn">Voir en Streaming</a>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+
+        <section class="featured-series">
+            <h2>Séries à la Une</h2>
+            <div class="carousel-container">
+                <div class="series-card">
+                    <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg" alt="The Last of Us">
+                    <div class="card-content">
+                        <h3>The Last of Us</h3>
+                        <a href="serie-detail.html" class="btn">Voir en Streaming</a>
+                    </div>
+                </div>
+                <!--<div class="series-card">
+                    <img src="https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg" alt="House of the Dragon">
+                    <div class="card-content">
+                        <h3>House of the Dragon</h3>
+                        <a href="serie-detail.html" class="btn">Voir en Streaming</a>
+                    </div>
+                </div>
+                <div class="series-card">
+                    <img src="https://image.tmdb.org/t/p/w500/7vjaCdMw15FEbXyLQTVa04URsPm.jpg" alt="Wednesday">
+                    <div class="card-content">
+                        <h3>Wednesday</h3>
+                        <a href="serie-detail.html" class="btn">Voir en Streaming</a>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 GStream. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
